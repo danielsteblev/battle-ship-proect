@@ -1,0 +1,214 @@
+* {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+}
+
+.app {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.app-header {
+	
+	padding: 30px;
+}
+
+.app-body {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.app-subtitle {
+	color: gray;
+}
+
+.app-link {
+	text-decoration: none;
+	color: #02025c;
+}
+
+.battlefield {
+	position: relative;
+}
+
+.battlefield-table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	background: rgba(40, 46, 250, 0.05);
+}
+
+.battlefield-item {
+	position: relative;
+	width: 32px;
+	height: 32px;
+	border: 1px solid rgba(96, 101, 160, 0.445);
+}
+
+.battlefield-item__active {
+	background: rgba(123, 121, 255, 0.2);
+	
+}
+
+.marker {
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 11px;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+
+.battlefield-status {
+	text-align: center;
+	padding: 20px;
+}
+
+.marker-row {
+	left: -35px;
+}
+
+.marker-column {
+	top: -35px;
+}
+
+.ship {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: -3px;
+	border: 3px solid #0400ff;
+	background: rgba(176, 191, 250, 0.45);
+	width: 32px;
+	height: 32px;
+}
+
+.ship-row-1 {
+}
+
+.ship-row-2 {
+	width: 65px;
+}
+
+.ship-row-3 {
+	width: 98px;
+}
+
+.ship-row-4 {
+	width: 131px;
+}
+
+.ship-column-1 {
+}
+
+.ship-column-2 {
+	height: 65px;
+}
+
+.ship-column-3 {
+	height: 98px;
+}
+
+.ship-column-4 {
+	height: 131px;
+}
+
+.app-actions {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.app-action {
+	width: 210px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.shot {
+	width: 32px;
+	height: 32px;
+	text-align: center;
+	display: flex;
+	position: absolute;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.shot-missed {
+	/* color: gray; */
+	color: "black";
+}
+
+.shot-wounded {
+	background: #fbdede;
+	z-index: 1;
+}
+
+.shot-wounded::after {
+	content: " ";
+	width: calc(32px * 1.3);
+	height: calc(32px * 1.3);
+	border-top: 2px solid red;
+	position: absolute;
+	z-index: -1;
+	transform: rotate(45deg);
+	top: 9px;
+	left: -20px;
+}
+
+.shot-wounded::before {
+	content: " ";
+	width: calc(32px * 1.3);
+	height: calc(32px * 1.3);
+	border-top: 2px solid red;
+	position: absolute;
+	z-index: -1;
+	transform: rotate(-45deg);
+	top: 9px;
+	left: 9px;
+}
+
+.shot-killed {
+	margin: -3px;
+	border: 3px solid red;
+}
+
+.hidden {
+	display: none;
+}
+
+.app-chat {
+}
+
+.app-chatinput {
+	width: 100%;
+	height: 35px;
+	font-size: 25px;
+	text-align: left;
+}
+
+.app-messages {
+}
+
+.app-message {
+	text-align: left;
+	color: #3c3c3c;
+	font-size: 16px;
+	margin-top: 10px;
+}

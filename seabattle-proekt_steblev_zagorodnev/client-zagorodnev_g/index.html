@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sea Battle</title>
+		<link rel="stylesheet" href="src/style.css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="app">
+			<div class="app-header">
+				<h2 class="app-title" style="font-family: 'Exo 2', sans-serif; margin-left: 2%">Морской бой</h2>
+				<span data-playersCount style="font-family: 'Roboto', sans-serif;margin-left: 11.6%; margin-top: -1.9%; color: #999;">0
+				</span> <h5 style="font-family: 'Roboto', sans-serif; margin-left: 12.9%; margin-top: -1.85%; color: #999;">игроков в сети</h5>
+			</div>
+			<div class="app-body">
+				<div data-side="player"></div>
+				<div class="app-menu">
+					<div class="app-actions" data-scene="preparation">
+						
+						<button class="app-action" data-computer="hard" disabled style="cursor: pointer;">
+							Одиночная игра
+						</button>
+						<button class="app-action" data-type="random" disabled style="cursor: pointer;" > 
+							Играть против случайного игрока
+						</button>
+						<button class="app-action" data-type="challenge" disabled style="cursor: pointer;" >
+							Пригласить в лобби
+						</button>
+						<button class="app-action" data-type="takeChallenge"style="cursor: pointer;" >
+							Войти в лобби
+						</button>
+						<button class="app-action" data-action="manually" style="cursor: pointer;">
+							Ручная расстановка 🖐️
+						</button>
+						<button class="app-action" data-action="randomize" style="cursor: pointer;">
+							Случайная расстановка ⭮
+						</button>
+					</div>
+
+					<div class="app-actions hidden" data-scene="computer">
+						<div class="battlefield-status">Ваш ход.</div>
+						<button class="app-action" data-action="gaveup">Сдаться</button>
+						<button class="app-action" data-action="again">
+							Играть еще раз
+						</button>
+					</div>
+
+					<div class="app-actions hidden" data-scene="online">
+						<div class="battlefield-status">Ваш ход</div>
+						<button class="app-action" data-action="gaveup">Сдаться</button>
+						<button class="app-action" data-action="again">
+							Играть еще раз
+						</button>
+					</div>
+				</div>
+				<div data-side="opponent"></div>
+			</div>
+			<div class="app-chat hidden">
+				<input class="app-chatinput" placeholder="Связь с противником..." />
+				<div class="app-messages">
+					<!-- <div class="app-message">Вот какое-то сообщение</div>
+					<div class="app-message">Вот какое-то сообщение</div>
+					<div class="app-message">Вот какое-то сообщение</div> -->
+				</div>
+			</div>
+		</div>
+
+		<script src="src/additional.js"></script>
+		<script src="src/Mouse.js"></script>
+
+		<script src="src/Application.js"></script>
+		<script src="src/Scene.js"></script>
+
+		<script src="src/scenes/PreparationScene.js"></script>
+		<script src="src/scenes/ComputerScene.js"></script>
+		<script src="src/scenes/OnlineScene.js"></script>
+
+		<script src="src/Battlefield.js"></script>
+		<script src="src/BattlefieldView.js"></script>
+
+		<script src="src/Ship.js"></script>
+		<script src="src/ShipView.js"></script>
+
+		<script src="src/Shot.js"></script>
+		<script src="src/ShotView.js"></script>
+
+		<script src="socket.io/socket.io.js"></script>
+		<script src="src/script.js"></script>
+	</body>
+</html>
